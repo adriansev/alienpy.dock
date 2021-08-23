@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+ALIENPY_VER="${1:-master}"
+[[ "${ALIENPY_VER}" == "master" ]] && TAG="latest" || TAG="${ALIENPY_VER}"
+
+./get_alien_ca
+
+docker build --build-arg ALIENPY_VERSION="${ALIENPY_VER}" -t adriansevcenco/alienpy.dock:"${TAG}" . && docker push adriansevcenco/alienpy.dock:"${TAG}"
+
