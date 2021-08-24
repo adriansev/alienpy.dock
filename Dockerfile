@@ -12,7 +12,7 @@ openssl rehash /etc/grid-security/certificates/
 
 RUN python3 -m pip install git+https://github.com/adriansev/jalien_py.git@${ALIENPY_VERSION}
 
-CMD [ "python3", "/usr/local/lib/python3.9/site-packages/alienpy/alien.py" ]
+ENTRYPOINT [ "python3", "/usr/local/lib/python3.9/site-packages/alienpy/alien.py" ]
 
 LABEL maintainer="Adrian.Sevcenco@spacescience.ro"
 
