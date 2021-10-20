@@ -5,5 +5,5 @@ ALIENPY_VER="${1:-master}"
 
 ./get_alien_ca
 
-docker build --build-arg ALIENPY_VERSION="${ALIENPY_VER}" -t adriansevcenco/alienpy.dock:"${TAG}" . && docker push adriansevcenco/alienpy.dock:"${TAG}"
+podman build --build-arg ALIENPY_VERSION="${ALIENPY_VER}" -t adriansevcenco/alienpy.dock:"${TAG}" . && podman push adriansevcenco/alienpy.dock:"${TAG}"
 
